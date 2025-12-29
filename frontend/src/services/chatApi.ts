@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/chat/message";
+const API_URL = "https://spur-ai-live-chat-kz9q.onrender.com/chat/message";
 
 export async function sendMessage(
   message: string,
