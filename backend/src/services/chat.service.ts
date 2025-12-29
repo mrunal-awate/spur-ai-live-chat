@@ -6,6 +6,8 @@ import {
   saveMessage,
   getMessages,
 } from "../repositories/message.repo";
+import { generateAIReply } from "./llm.service";
+
 
 export async function handleChatMessage(
   message: string,
@@ -22,7 +24,9 @@ export async function handleChatMessage(
   await saveMessage(conversationId, "user", message);
 
   // 🔹 TEMP AI RESPONSE (mock)
-  const aiReply = "Thanks for your message! Our support agent will assist you shortly.";
+  const history = await getMessages(conversationId);
+
+  const aiReply = await generateAIReply(history, message);
 
   // Save AI message
   await saveMessage(conversationId, "ai", aiReply);
