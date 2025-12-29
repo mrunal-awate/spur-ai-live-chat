@@ -24,12 +24,14 @@ export async function generateAIReply(
       { role: "user", content: userMessage },
     ];
 
-    const response = await client.chat.completions.create({
-      model: "openai/gpt-4o-mini",
-      messages,
-      max_tokens: 150,
-      temperature: 0.3,
-    });
+    const response = await client.chat.completions.create(
+      {
+        model: "openai/gpt-4o-mini",
+        messages: messages as any,
+        max_tokens: 150,
+        temperature: 0.3,
+      } as any
+    );
 
     return (
       response.choices[0]?.message?.content ??
