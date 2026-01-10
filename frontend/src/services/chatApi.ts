@@ -1,19 +1,19 @@
-const API_URL = "https://spur-ai-live-chat-kz9q.onrender.com/chat/message";
+const API_URL = "https://spur-ai-live-chat-kz9q.onrender.com/chat/message";     // backend API URL
 
-export async function sendMessage(
+export async function sendMessage(                                              // function to send message to backend
   message: string,
   sessionId?: string | null
 ) {
-  const res = await fetch(API_URL, {
+  const res = await fetch(API_URL, {                                      // fetch API to send message                  
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "application/json",                 // set content type to JSON
     },
-    body: JSON.stringify({ message, sessionId }),
+    body: JSON.stringify({ message, sessionId }),        // send message and sessionId in body        
   });
 
   if (!res.ok) {
-    throw new Error("Failed to send message");
+    throw new Error("Failed to send message");              // throw error if response is not ok        
   }
 
   return res.json();

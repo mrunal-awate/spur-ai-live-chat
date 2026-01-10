@@ -1,5 +1,5 @@
 <script>
-  import ChatWindow from "./components/ChatWindow.svelte";
+  import ChatWindow from "./components/ChatWindow.svelte";                      // import ChatWindow component
 </script>
 
 <main>
