@@ -2,7 +2,7 @@ const API_URL = "https://spur-ai-live-chat-kz9q.onrender.com/chat/message";     
 
 export async function sendMessage(                                              // function to send message to backend
   message: string,
-  sessionId?: string | null
+  sessionId?: string | null                                        // optional sessionId parameter    
 ) {
   const res = await fetch(API_URL, {                                      // fetch API to send message                  
     method: "POST",
@@ -16,5 +16,5 @@ export async function sendMessage(                                              
     throw new Error("Failed to send message");              // throw error if response is not ok        
   }
 
-  return res.json();
+  return res.json();                               // return response as JSON 
 }

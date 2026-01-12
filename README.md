@@ -215,7 +215,7 @@ http://localhost:5173
 
 🔮 **If I Had More Time…**
 
-1. Add streaming AI responses
+1. Add streaming AI responses.
 
 2. Fetch and render chat history on reload
 

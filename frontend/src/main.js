@@ -6,4 +6,4 @@ const app = mount(App, {                 // mount the App component
   target: document.getElementById('app'),         // target element in HTML
 })
 
-export default app
+export default app                      // export the app instance
