@@ -6,7 +6,7 @@ import {
   saveMessage,
   getMessages,
 } from "../repositories/message.repo";
-import { generateAIReply } from "./llm.service";
+import { generateAIReply } from "./llm.service";                    // import generateAIReply from llm service                    
 
 
 export async function handleChatMessage(
