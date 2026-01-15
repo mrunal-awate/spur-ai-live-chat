@@ -18,7 +18,7 @@ export function saveMessage(
   });
 }
 
-export function getMessages(conversationId: string) {
+export function getMessages(conversationId: string) {                           // fetch messages by conversationId
   return new Promise<any[]>((resolve, reject) => {
     db.all(
       `SELECT sender, text FROM messages

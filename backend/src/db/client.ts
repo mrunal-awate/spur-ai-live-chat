@@ -44,7 +44,7 @@ const schemaPath = path.join(
   "schema.sql"
 );
 
-const schema = fs.readFileSync(schemaPath, "utf8");
+const schema = fs.readFileSync(schemaPath, "utf8");                                 // read schema file
 
 const db = new sqlite3.Database(dbPath);
 
