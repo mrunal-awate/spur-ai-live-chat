@@ -1,9 +1,9 @@
 <script>
   import { loading } from "../stores/chatStore";
-  import { createEventDispatcher } from "svelte";
+  import { createEventDispatcher } from "svelte";                       // import loading store and createEventDispatcher from svelte
 
   let text = "";
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher();             // create event dispatcher for sending message to parent component    
 
   function send() {
     if (!text.trim()) return;
@@ -14,9 +14,9 @@
 
 <div class="input">
   <input
-    placeholder="Type your message..."
+    placeholder="Type your message..."                            
     bind:value={text}
-    on:keydown={(e) => e.key === "Enter" && send()}
+    on:keydown={(e) => e.key === "Enter" && send()}                   
     disabled={$loading}
   />
   <button on:click={send} disabled={$loading}>Send</button>
